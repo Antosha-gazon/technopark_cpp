@@ -43,12 +43,12 @@ matrix:
 
 script:
   # скрипт сборки и тестирования проекта:
-  - cd DZ1
+  - cd task1/filter
   - mkdir build
   - cd build
   - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU -DCMAKE_C_FLAGS="--coverage" -DCMAKE_CXX_FLAGS="--coverage"
   - cmake --build .
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "${CC_FOR_BUILD}" =~ gcc$ ]]; then valgrind --tool=memcheck --leak-check=yes ./Google_tests/Google_Tests_run; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "${CC_FOR_BUILD}" =~ gcc$ ]]; then valgrind --tool=memcheck --leak-check=yes .../test/lib/Google_Tests_run; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "${CC_FOR_BUILD}" =~ gcc$пше ]]; then lcov --capture --directory . --output-file coverage.info; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "${CC_FOR_BUILD}" =~ gcc$ ]]; then bash <(curl -s https://codecov.io/bash); fi
   - cd ..
