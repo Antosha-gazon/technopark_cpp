@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/task1_v70_3.dir/src/main.c.o CMakeFiles/task1_v70_3.dir/src/string.c.o CMakeFiles/task1_v70_3.dir/src/vector.c.o CMakeFiles/task1_v70_3.dir/src/filter.c.o  -o task1_v70_3 

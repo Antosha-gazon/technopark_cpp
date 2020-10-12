@@ -1,0 +1,3 @@
+/home/anton/dev/techno_park/cpp/task1/filter/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/anton/dev/techno_park/cpp/task1/filter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anton/dev/techno_park/cpp/task1/filter/cmake-build-debug/CMakeFiles/filter.dir

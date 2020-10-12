@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/filter.dir/src/main.c.o CMakeFiles/filter.dir/src/string.c.o CMakeFiles/filter.dir/src/vector.c.o CMakeFiles/filter.dir/src/filter.c.o  -o filter 

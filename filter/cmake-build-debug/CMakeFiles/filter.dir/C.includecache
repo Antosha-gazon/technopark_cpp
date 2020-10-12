@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/filter.h
+string.h
+../inc/string.h
+vector.h
+../inc/vector.h
+
+../inc/string.h
+stdlib.h
+../inc/stdlib.h
+
+../inc/vector.h
+stdlib.h
+-
+monetary.h
+-
+
+/home/anton/dev/techno_park/cpp/task1/filter/src/main.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+/home/anton/dev/techno_park/cpp/task1/filter/src/string.h
+filter.h
+/home/anton/dev/techno_park/cpp/task1/filter/src/filter.h
+
