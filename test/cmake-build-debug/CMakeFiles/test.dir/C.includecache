@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/dev/techno_park/cpp/task1/filter/src/vector.c
+vector.h
+/home/anton/dev/techno_park/cpp/task1/filter/src/vector.h
+

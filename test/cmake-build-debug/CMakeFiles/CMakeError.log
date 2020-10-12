@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_09ecb/fast && /usr/bin/make  -f CMakeFiles/cmTC_09ecb.dir/build.make CMakeFiles/cmTC_09ecb.dir/build
+make[1]: вход в каталог «/home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_09ecb.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_09ecb.dir/src.c.o   -c /home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_09ecb
+/snap/clion/129/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09ecb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_09ecb.dir/src.c.o  -o cmTC_09ecb 
+/usr/bin/ld: CMakeFiles/cmTC_09ecb.dir/src.c.o: в функции «main»:
+src.c:(.text+0x46): неопределённая ссылка на «pthread_create»
+/usr/bin/ld: src.c:(.text+0x52): неопределённая ссылка на «pthread_detach»
+/usr/bin/ld: src.c:(.text+0x5e): неопределённая ссылка на «pthread_cancel»
+/usr/bin/ld: src.c:(.text+0x6f): неопределённая ссылка на «pthread_join»
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_09ecb.dir/build.make:107: cmTC_09ecb] Ошибка 1
+make[1]: выход из каталога «/home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp»
+make: *** [Makefile:141: cmTC_09ecb/fast] Ошибка 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_aa7ec/fast && /usr/bin/make  -f CMakeFiles/cmTC_aa7ec.dir/build.make CMakeFiles/cmTC_aa7ec.dir/build
+make[1]: вход в каталог «/home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_aa7ec.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_aa7ec.dir/CheckFunctionExists.c.o   -c /snap/clion/129/bin/cmake/linux/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_aa7ec
+/snap/clion/129/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa7ec.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_aa7ec.dir/CheckFunctionExists.c.o  -o cmTC_aa7ec  -lpthreads 
+/usr/bin/ld: невозможно найти -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_aa7ec.dir/build.make:107: cmTC_aa7ec] Ошибка 1
+make[1]: выход из каталога «/home/anton/dev/techno_park/cpp/task1/test/cmake-build-debug/CMakeFiles/CMakeTmp»
+make: *** [Makefile:141: cmTC_aa7ec/fast] Ошибка 2
+
+
+
